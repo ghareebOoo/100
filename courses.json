@@ -1,0 +1,29 @@
+{
+    "courses": [
+      {
+        "id": 1,
+        "name": "برمجة تطبيقات الويب",
+        "description": "تعلم أساسيات برمجة تطبيقات الويب باستخدام HTML, CSS, وJavaScript.",
+        "duration": "6 أسابيع",
+        "start_date": "2024-10-01",
+        "instructor": "أحمد العلي"
+      },
+      {
+        "id": 2,
+        "name": "تحليل البيانات",
+        "description": "استكشاف مهارات تحليل البيانات باستخدام Python وPandas.",
+        "duration": "8 أسابيع",
+        "start_date": "2024-11-15",
+        "instructor": "فاطمة الزهراء"
+      },
+      {
+        "id": 3,
+        "name": "تصميم الجرافيك",
+        "description": "مقدمة إلى تصميم الجرافيك واستخدام Adobe Illustrator.",
+        "duration": "5 أسابيع",
+        "start_date": "2024-12-01",
+        "instructor": "سليمان الجهني"
+      }
+    ]
+  }
+  

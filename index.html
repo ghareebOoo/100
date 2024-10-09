@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الكورسات</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .course {
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        .course h2 {
+            margin: 0;
+        }
+
+        .course p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>الكورسات المتاحة</h1>
+    <div id="courses-container"></div>
+
+    <script>
+        fetch('courses.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const coursesContainer = document.getElementById('courses-container');
+                data.courses.forEach(course => {
+                    const courseDiv = document.createElement('div');
+                    courseDiv.classList.add('course');
+                    courseDiv.innerHTML = `
+                        <h2>${course.name}</h2>
+                        <p><strong>الوصف:</strong> ${course.description}</p>
+                        <p><strong>المدة:</strong> ${course.duration}</p>
+                        <p><strong>تاريخ البدء:</strong> ${course.start_date}</p>
+                        <p><strong>المدرب:</strong> ${course.instructor}</p>
+                    `;
+                    coursesContainer.appendChild(courseDiv);
+                });
+            })
+            .catch(error => console.error('Error fetching the courses:', error));
+    </script>
+</body>
+</html>
